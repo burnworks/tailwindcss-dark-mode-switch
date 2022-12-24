@@ -1,0 +1,32 @@
+include ./_mixin/_darkmodeswitch
+
+doctype html
+html(lang="en")
+	head
+		meta(charset="UTF-8")
+		title Tailwind CSS Dark Mode Switch Pug Sample
+		meta(name="viewport", content="width=device-width")
+		link(href="css/styles.css", rel="stylesheet")
+	body
+		main(class="grid place-content-center min-h-screen bg-white dark:bg-slate-800 py-16")
+			div(class="text-center p-6 border border-slate-100 rounded-md dark:border-slate-50/20")
+				.inline-block
+					+Darkmodeswitch
+			div(class="mt-16 prose prose-slate dark:prose-invert mx-auto")
+				h1 Sample Text
+				h2 Lorem Ipsum
+				p
+					| Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis et nulla vitae diam consectetur consequat ac quis leo. Ut nec sodales dolor, id facilisis augue. Sed massa tellus, tempus in nisl
+					| id, fermentum rhoncus sapien. Pellentesque auctor purus diam, non lobortis turpis aliquam vel. Sed sed urna vitae velit tincidunt viverra. Nulla ullamcorper porta ullamcorper. Pellentesque
+					| habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Mauris sem turpis, sollicitudin quis purus sit amet, viverra rutrum dui. Proin vehicula rutrum augue, non
+					| ultricies tortor semper ut. Aliquam erat volutpat. Ut fringilla neque ac tortor condimentum, a accumsan elit semper. Etiam velit velit, gravida sed lacus quis, feugiat bibendum nunc. Fusce
+					| faucibus elementum nibh. Pellentesque viverra vehicula dapibus.
+				p
+					| In id mollis turpis, et placerat orci. Ut nec aliquet mauris. Duis in ligula lacinia, suscipit est non, lobortis est. Morbi luctus elit id euismod scelerisque. Vestibulum lobortis tellus
+					| nulla, id rutrum sem rutrum vulputate. Integer nec nulla aliquet, imperdiet turpis id, tristique lectus. Nullam ut mi a mauris mattis sodales. Ut mollis interdum semper. Donec accumsan
+					| ultricies metus, eget congue ipsum aliquet at. Integer sed efficitur sapien. Donec congue tellus vitae erat malesuada blandit. Orci varius natoque penatibus et magnis dis parturient montes,
+					| nascetur ridiculus mus. Praesent leo metus, malesuada auctor orci pretium, placerat sollicitudin nisi.
+				h3 What is Lorem Ipsum?
+				p
+					a(href="https://ja.wikipedia.org/wiki/Lorem_ipsum", hreflang="ja") Lorem Ipsum
+					| is simply dummy text of the printing and typesetting industry.

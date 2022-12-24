@@ -1,0 +1,23 @@
+{
+  "name": "tailwindcss-dark-mode-switch-pug-sample",
+  "type": "module",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "dev": "run-p dev:*",
+    "dev:server": "npx browser-sync start --config bs-config.cjs",
+    "dev:css": "npx tailwindcss -i ./src/css/styles.css -o ./dist/css/styles.css --watch",
+    "dev:pug": "pug --out ./dist --watch ./src/index.pug --pretty",
+    "build": "run-s build:*",
+    "build:css": "npx tailwindcss -i ./src/css/styles.css -o ./dist/css/styles.css",
+    "build:pug": "pug --out ./dist ./src/index.pug --pretty"
+  },
+  "devDependencies": {
+    "@tailwindcss/typography": "^0.5.8",
+    "browser-sync": "^2.27.11",
+    "npm-run-all": "^4.1.5",
+    "pug": "^3.0.2",
+    "pug-cli": "^1.0.0-alpha6",
+    "tailwindcss": "^3.2.4"
+  }
+}
