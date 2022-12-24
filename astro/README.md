@@ -23,6 +23,8 @@ Inside of your Astro project, you'll see the following folders and files:
 ### View sample page
 
 ```shell
+git clone https://github.com/burnworks/tailwindcss-dark-mode-switch.git
+cd astro
 npm install
 npm run dev
 ```
