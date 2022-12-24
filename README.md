@@ -28,3 +28,4 @@ module.exports = {
 ## Usage
 
 - Astro -> [Astro Sample](astro/)
+- Pug -> [Pug Sample](pug/)
