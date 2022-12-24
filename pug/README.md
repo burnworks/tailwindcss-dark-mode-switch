@@ -5,7 +5,7 @@
 ```
 /
 ├── src/
-│     ├── index.pub
+│     ├── index.pug
 │     ├── _mixin/
 │     │      └── _darkmodeswitch.pug
 │     └── css/
