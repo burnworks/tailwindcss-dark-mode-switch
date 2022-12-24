@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Tailwind CSS Dark Mode Switch Sample</title>
+  <meta name="viewport" content="width=device-width">
+  <link href="css/styles.css" rel="stylesheet">
+</head>
+
+<body>
+  <main class="grid place-content-center min-h-screen bg-white dark:bg-slate-800 py-16">
+    <div class="text-center p-6 border border-slate-100 rounded-md dark:border-slate-50/20">
+      <div class="inline-block">
+        <div class="flex h-7 w-14 rounded-full bg-gray-100 dark:bg-gray-900"><span class="sr-only">現在のモード：<span
+              id="darkmode-state">ライトモード</span></span>
+          <div class="flex justify-between items-center w-full">
+            <div class="flex justify-center items-center h-6 w-6">
+              <button
+                class="flex justify-center items-center h-6 w-6 rounded-full bg-yellow-300 text-gray-900 dark:bg-transparent dark:text-gray-200"
+                id="handle-darkmode-off" type="button">
+                <svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                  stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z">
+                  </path>
+                </svg><span class="sr-only">ライトモードに切り替える</span>
+              </button>
+            </div>
+            <div class="flex justify-center items-center h-6 w-6">
+              <button
+                class="flex justify-center items-center h-6 w-6 rounded-full bg-transparent text-gray-900 dark:bg-white text dark:text-gray-900"
+                id="handle-darkmode-on" type="button">
+                <svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                  stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+                </svg><span class="sr-only">ダークモードに切り替える</span>
+              </button>
+            </div>
+          </div>
+        </div>
+        <script type="module">
+          window.addEventListener("DOMContentLoaded", () => {
+            const lightBtn = document.getElementById("handle-darkmode-off");
+            const darkBtn = document.getElementById("handle-darkmode-on");
+            const state = document.getElementById("darkmode-state");
+            const stateLightText = "ライトモード";
+            const stateDarkText = "ダークモード";
+
+            const handleDarkmodeOff = () => {
+              localStorage.setItem("prefers_color_scheme_set", "light");
+              document.documentElement.classList.remove("dark");
+              state.textContent = stateLightText;
+            };
+
+            const handleDarkmodeOn = () => {
+              localStorage.setItem("prefers_color_scheme_set", "dark");
+              document.documentElement.classList.add("dark");
+              state.textContent = stateDarkText;
+            };
+
+            if (localStorage.prefers_color_scheme_set === "dark" || (!("prefers_color_scheme_set" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
+              document.documentElement.classList.add("dark");
+              state.textContent = stateDarkText;
+            } else {
+              document.documentElement.classList.remove("dark");
+              state.textContent = stateLightText;
+            }
+
+            lightBtn.addEventListener("click", handleDarkmodeOff);
+            darkBtn.addEventListener("click", handleDarkmodeOn);
+          });
+        </script>
+      </div>
+    </div>
+    <div class="mt-16 prose prose-slate dark:prose-invert mx-auto">
+      <h1>Sample Text</h1>
+      <h2>Lorem Ipsum</h2>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis et nulla vitae diam consectetur consequat ac quis
+        leo. Ut nec sodales dolor, id facilisis augue. Sed massa tellus, tempus in nisl
+        id, fermentum rhoncus sapien. Pellentesque auctor purus diam, non lobortis turpis aliquam vel. Sed sed urna
+        vitae velit tincidunt viverra. Nulla ullamcorper porta ullamcorper. Pellentesque
+        habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Mauris sem turpis, sollicitudin
+        quis purus sit amet, viverra rutrum dui. Proin vehicula rutrum augue, non
+        ultricies tortor semper ut. Aliquam erat volutpat. Ut fringilla neque ac tortor condimentum, a accumsan elit
+        semper. Etiam velit velit, gravida sed lacus quis, feugiat bibendum nunc. Fusce
+        faucibus elementum nibh. Pellentesque viverra vehicula dapibus.
+      </p>
+      <p>
+        In id mollis turpis, et placerat orci. Ut nec aliquet mauris. Duis in ligula lacinia, suscipit est non, lobortis
+        est. Morbi luctus elit id euismod scelerisque. Vestibulum lobortis tellus
+        nulla, id rutrum sem rutrum vulputate. Integer nec nulla aliquet, imperdiet turpis id, tristique lectus. Nullam
+        ut mi a mauris mattis sodales. Ut mollis interdum semper. Donec accumsan
+        ultricies metus, eget congue ipsum aliquet at. Integer sed efficitur sapien. Donec congue tellus vitae erat
+        malesuada blandit. Orci varius natoque penatibus et magnis dis parturient montes,
+        nascetur ridiculus mus. Praesent leo metus, malesuada auctor orci pretium, placerat sollicitudin nisi.
+      </p>
+      <h3>What is Lorem Ipsum?</h3>
+      <p><a href="https://ja.wikipedia.org/wiki/Lorem_ipsum" hreflang="ja">Lorem Ipsum</a>is simply dummy text of the
+        printing and typesetting industry.</p>
+    </div>
+  </main>
+</body>
+
+</html>
