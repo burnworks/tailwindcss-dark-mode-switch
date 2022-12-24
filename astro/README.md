@@ -40,3 +40,9 @@ import Darkmodeswitch from "../components/Darkmodeswitch.astro";
 
 <Darkmodeswitch />
 ```
+
+## Link
+
+- [Astro](https://astro.build/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [Heroicons](https://heroicons.com/)
