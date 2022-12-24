@@ -7,9 +7,9 @@
 ├── src/
 │     ├── index.pug
 │     ├── _mixin/
-│     │      └── _darkmodeswitch.pug
+│     │     └── _darkmodeswitch.pug
 │     └── css/
-│             └── styles.css
+│           └── styles.css
 ├── tailwind.config.cjs
 ├── bs-config.cjs (browser-sync config file)
 └── package.json
