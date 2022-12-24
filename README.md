@@ -1,6 +1,6 @@
 # Tailwind CSS Dark Mode Switch
 
-Dark Mode/Light Mode switcher with Tailwind CSS.
+Dark Mode/Light Mode switcher with [Tailwind CSS](https://tailwindcss.com/).
 
 ## Required Package
 
