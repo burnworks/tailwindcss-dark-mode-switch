@@ -29,3 +29,7 @@ module.exports = {
 
 - Astro -> [Astro Sample](astro/)
 - Pug -> [Pug Sample](pug/)
+
+## Demo
+
+- [demo page](https://burnworks.github.io/tailwindcss-dark-mode-switch/)
